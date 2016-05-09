@@ -23,7 +23,7 @@ module.exports = {
     },
 
     "Host":{
-        "Port":"HOST_CDRPROCESSOR_PORT",
+        "Port":"HOST_INTERNALCDRPROCESSOR_PORT",
         "Version":"HOST_VERSION"
     }
 };
