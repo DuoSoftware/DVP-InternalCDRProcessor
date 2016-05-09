@@ -226,6 +226,7 @@
                 var opCat = varSec['DVP_OPERATION_CAT'];
                 var actionCat = varSec['DVP_ACTION_CAT'];
                 var advOpAction = varSec['DVP_ADVANCED_OP_ACTION'];
+                var memberuuid = varSec['memberuuid'];
                 var answerDate = undefined;
                 var createdDate = undefined;
                 var bridgeDate = undefined;
@@ -239,6 +240,11 @@
                 if(!sipToUser)
                 {
                     sipToUser = varSec['dialed_user'];
+                }
+
+                if(memberuuid)
+                {
+                    callUuid = memberuuid;
                 }
 
 
