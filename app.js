@@ -6,6 +6,7 @@
     var config = require('config');
     var nodeUuid = require('node-uuid');
     var logger = require('dvp-common/LogHandler/CommonLogHandler.js').logger;
+    var messageFormatter = require('dvp-common/CommonMessageGenerator/ClientMessageJsonFormatter.js');
     //var jwt = require('restify-jwt');
     //var secret = require('dvp-common/Authentication/Secret.js');
     //var authorization = require('dvp-common/Authentication/Authorization.js');
@@ -227,6 +228,7 @@
                 var actionCat = varSec['DVP_ACTION_CAT'];
                 var advOpAction = varSec['DVP_ADVANCED_OP_ACTION'];
                 var memberuuid = varSec['memberuuid'];
+                var conferenceUuid = varSec['conference_uuid'];
                 var answerDate = undefined;
                 var createdDate = undefined;
                 var bridgeDate = undefined;
@@ -245,6 +247,11 @@
                 if(memberuuid)
                 {
                     callUuid = memberuuid;
+                }
+
+                if(conferenceUuid)
+                {
+                    callUuid = conferenceUuid;
                 }
 
 
