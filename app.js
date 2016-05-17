@@ -238,6 +238,7 @@
                 var advOpAction = varSec['DVP_ADVANCED_OP_ACTION'];
                 var memberuuid = varSec['memberuuid'];
                 var conferenceUuid = varSec['conference_uuid'];
+                var originatedLegs = varSec['originated_legs'];
                 var answerDate = undefined;
                 var createdDate = undefined;
                 var bridgeDate = undefined;
@@ -347,6 +348,11 @@
                     TenantId: tenantId,
                     AppId: appId
                 });
+
+                if(originatedLegs)
+                {
+                    cdr.ObjClass = originatedLegs;
+                }
 
                 if(actionCat)
                 {
