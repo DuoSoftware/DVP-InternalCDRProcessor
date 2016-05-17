@@ -212,10 +212,19 @@
                 var uuid = varSec['uuid'];
                 var callUuid = varSec['call_uuid'];
                 var bridgeUuid = varSec['bridge_uuid'];
-                //var sipFromUser = callerProfileSec['caller_id_number'];
-                var sipFromUser = varSec['sip_from_user'];
-                //var sipToUser = callerProfileSec['destination_number'];
-                var sipToUser = varSec['sip_to_user'];
+                var sipFromUser = callerProfileSec['caller_id_number'];
+                var sipToUser = callerProfileSec['destination_number'];
+
+                if(!sipFromUser)
+                {
+                    sipFromUser = varSec['sip_from_user'];
+                }
+
+                if(!sipToUser)
+                {
+                    sipToUser = varSec['sip_to_user'];
+                }
+
                 var hangupCause = varSec['hangup_cause'];
                 var direction = varSec['direction'];
                 var switchName = cdrObj['switchname'];
