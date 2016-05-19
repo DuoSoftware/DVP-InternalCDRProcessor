@@ -346,13 +346,10 @@
                     ObjCategory: 'DEFAULT',
                     CompanyId: companyId,
                     TenantId: tenantId,
-                    AppId: appId
+                    AppId: appId,
+                    OriginatedLegs: originatedLegs
                 });
 
-                if(originatedLegs)
-                {
-                    cdr.ObjClass = originatedLegs;
-                }
 
                 if(actionCat)
                 {
