@@ -350,6 +350,18 @@
                     OriginatedLegs: originatedLegs
                 });
 
+                if(direction === 'inbound' && !originatedLegs && (opCat === 'HTTAPI' || opCat === 'SOCKET'))
+                {
+                    if(bridgeUuid)
+                    {
+                        cdr.OriginatedLegs = bridgeUuid;
+                    }
+                    else
+                    {
+                        cdr.OriginatedLegs = callUuid;
+                    }
+
+                }
 
                 if(actionCat)
                 {
