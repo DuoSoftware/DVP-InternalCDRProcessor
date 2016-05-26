@@ -351,7 +351,7 @@
                     OriginatedLegs: originatedLegs
                 });
 
-                if(opCat === 'CONFERENCE')
+                if(actionCat === 'CONFERENCE')
                 {
                     cdr.ExtraData = confName;
                 }
