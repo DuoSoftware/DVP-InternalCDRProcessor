@@ -236,6 +236,7 @@
                 var opCat = varSec['DVP_OPERATION_CAT'];
                 var actionCat = varSec['DVP_ACTION_CAT'];
                 var advOpAction = varSec['DVP_ADVANCED_OP_ACTION'];
+                var confName = varSec['DVP_CONFERENCE_NAME'];
                 var memberuuid = varSec['memberuuid'];
                 var conferenceUuid = varSec['conference_uuid'];
                 var originatedLegs = varSec['originated_legs'];
@@ -349,6 +350,11 @@
                     AppId: appId,
                     OriginatedLegs: originatedLegs
                 });
+
+                if(opCat === 'CONFERENCE')
+                {
+                    cdr.ExtraData = confName;
+                }
 
                 if(actionCat)
                 {
