@@ -309,7 +309,14 @@
                     tenantId = '-1';
                 }
 
-                var isAnswered = bridgeUuid != undefined;
+                var isAnswered = false;
+
+                if(answerDate > new Date('1970-01-01') && duration)
+                {
+                    isAnswered = true;
+                }
+
+
                 var duration = varSec['duration'];
                 var billSec = varSec['billsec'];
                 var holdSec = varSec['hold_accum_seconds'];
@@ -350,6 +357,9 @@
                     AppId: appId,
                     OriginatedLegs: originatedLegs
                 });
+
+
+
 
                 if(actionCat === 'CONFERENCE')
                 {
