@@ -310,14 +310,6 @@
                     tenantId = '-1';
                 }
 
-                var isAnswered = false;
-
-                if(answerDate > new Date('1970-01-01') && duration)
-                {
-                    isAnswered = true;
-                }
-
-
                 var duration = varSec['duration'];
                 var billSec = varSec['billsec'];
                 var holdSec = varSec['hold_accum_seconds'];
@@ -326,6 +318,13 @@
                 var waitSec = varSec['waitsec'];
                 var progressMediaSec = varSec['progress_mediasec'];
                 var flowBillSec = varSec['flow_billsec'];
+
+                var isAnswered = false;
+
+                if(answerDate > new Date('1970-01-01') && duration)
+                {
+                    isAnswered = true;
+                }
 
                 var cdr = dbModel.CallCDR.build({
                     Uuid: uuid,
