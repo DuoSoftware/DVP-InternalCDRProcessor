@@ -321,7 +321,7 @@
 
                 var isAnswered = false;
 
-                if(answerDate > new Date('1970-01-01') && duration)
+                if(answerDate > new Date('1970-01-01'))
                 {
                     isAnswered = true;
                 }
