@@ -238,6 +238,7 @@
                 var advOpAction = varSec['DVP_ADVANCED_OP_ACTION'];
                 var confName = varSec['DVP_CONFERENCE_NAME'];
                 var dvpCallDirection = varSec['DVP_CALL_DIRECTION'];
+                var sipHangupDisposition = varSec['sip_hangup_disposition'];
                 var memberuuid = varSec['memberuuid'];
                 var conferenceUuid = varSec['conference_uuid'];
                 var originatedLegs = varSec['originated_legs'];
@@ -356,7 +357,8 @@
                     TenantId: tenantId,
                     AppId: appId,
                     OriginatedLegs: originatedLegs,
-                    DVPCallDirection: dvpCallDirection
+                    DVPCallDirection: dvpCallDirection,
+                    HangupDisposition:sipHangupDisposition
                 });
 
 
