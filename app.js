@@ -25,6 +25,7 @@
     server.use(restify.bodyParser());
     //server.use(jwt({secret: secret.Secret}));
 
+
     var ProcessBatchCDR = function(cdrList)
     {
         var emptyArr = [];
@@ -296,6 +297,19 @@
                     hangupDate = new Date(hangupTStamp);
                 }
 
+                var ardsAddedTimeStamp = varSec['ards_added'];
+                var queueLeftTimeStamp = varSec['ards_queue_left'];
+
+                var queueTime = 0;
+
+                if(ardsAddedTimeStamp && queueLeftTimeStamp)
+                {
+                    var ardsAddedTimeSec = parseInt(ardsAddedTimeStamp);
+                    var queueLeftTimeSec = parseInt(queueLeftTimeStamp);
+
+                    queueTime = queueLeftTimeSec - ardsAddedTimeSec;
+                }
+
                 if(!appId)
                 {
                     appId = '-1';
@@ -310,6 +324,8 @@
                 {
                     tenantId = '-1';
                 }
+
+                var agentSkill = varSec['ards_skill_display'];
 
                 var duration = varSec['duration'];
                 var billSec = varSec['billsec'];
@@ -346,6 +362,7 @@
                     BillSec: billSec,
                     HoldSec: holdSec,
                     ProgressSec: progressSec,
+                    QueueSec: queueTime,
                     AnswerSec: answerSec,
                     WaitSec: waitSec,
                     ProgressMediaSec: progressMediaSec,
@@ -356,6 +373,7 @@
                     CompanyId: companyId,
                     TenantId: tenantId,
                     AppId: appId,
+                    AgentSkill: agentSkill,
                     OriginatedLegs: originatedLegs,
                     DVPCallDirection: dvpCallDirection,
                     HangupDisposition:sipHangupDisposition
