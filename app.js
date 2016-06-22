@@ -297,8 +297,11 @@
                     hangupDate = new Date(hangupTStamp);
                 }
 
+                var isAgentAnswered = false;
+
                 var ardsAddedTimeStamp = varSec['ards_added'];
                 var queueLeftTimeStamp = varSec['ards_queue_left'];
+                var ardsRoutedTimeStamp = varSec['ards_routed'];
 
                 var queueTime = 0;
 
@@ -308,6 +311,11 @@
                     var queueLeftTimeSec = parseInt(queueLeftTimeStamp);
 
                     queueTime = queueLeftTimeSec - ardsAddedTimeSec;
+                }
+
+                if(ardsRoutedTimeStamp)
+                {
+                    isAgentAnswered = true;
                 }
 
                 if(!appId)
@@ -376,7 +384,8 @@
                     AgentSkill: agentSkill,
                     OriginatedLegs: originatedLegs,
                     DVPCallDirection: dvpCallDirection,
-                    HangupDisposition:sipHangupDisposition
+                    HangupDisposition:sipHangupDisposition,
+                    AgentAnswered: isAgentAnswered
                 });
 
 
