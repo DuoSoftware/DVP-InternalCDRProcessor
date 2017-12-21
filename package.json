@@ -5,8 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "config": "^1.12.0",
-    "dvp-common": "^0.8.4",
-    "dvp-dbmodels": "^0.2.1",
+    "dvp-common": "1.1.0",
+    "dvp-dbmodels": "2.1.0",
     "node-uuid": "^1.4.3",
     "restify": "^3.0.2",
     "restify-jwt": "^0.4.0",
