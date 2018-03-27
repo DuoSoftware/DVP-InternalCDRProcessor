@@ -7,7 +7,7 @@
 
 #EXPOSE 8809
 
-FROM node:argon
+FROM node:9.9.0
 RUN git clone git://github.com/DuoSoftware/DVP-InternalCDRProcessor.git /usr/local/src/cdrprocessor_internal
 RUN cd /usr/local/src/cdrprocessor_internal;
 WORKDIR /usr/local/src/cdrprocessor_internal
